@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <link rel='stylesheet' href='/vendor/bootstrap/dist/css/bootstrap.css' />
+  </head>
+  <body>
+    <div class='container'>
+      <a href='/'>Home</a>
+      <h1>Products</h1>
+      <form method='post' action='/products'>
+        <div>
+          <input name='name' placeholder='name'/>
+        </div>
+        <div>
+          <input name='rating' placeholder='rating'>
+        </div>
+        <div>
+          <button class='btn-primary'>Save</button>
+        </div>
+      </form>
+      <ul class="list-group">
+          {% for product in products %}
+            <li class="list-group-item">
+              <a href="/products/{{product.id}}">{{product.name}}</a>
+              <span class="badge">{{product.rating}}</span>
+            </li>
+          {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>
