@@ -13,7 +13,7 @@ nunjucks.configure('views', {noCache: true});
 
 app.use('/vendor', express.static(path.join((__dirname, 'node_modules'))));
 app.use(bodyParser.urlencoded({ extended: false}));
-app.use(methodOverride("_method"));
+app.use(methodOverride('_method'));
 app.use('/products', require('./routes/products'));
 app.use(function(err, req, res, next){
   res.render('error', {error: err});

@@ -41,7 +41,7 @@ function remove(id){
   for(var i in products){
     if(products[i].id === Number(id)){
       products.splice(i,1)
-      return products;
+      // return products;
     }
   }
   

@@ -24,13 +24,8 @@ router.delete('/:id', function(req, res){
 router.post('/', function(req, res){
     var name = req.body.name;
     var rating = req.body.rating;
-    if( name && rating) {
-        db.add(name, rating);
-        res.redirect('/products');
-    }
-    else{
-        res.render('Error missing name and/or rating');
-    }
+    db.add(name, rating);
+    res.redirect('/products');
 });
 
 module.exports = router;
