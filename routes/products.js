@@ -11,15 +11,9 @@ router.get('/:id', function(req, res){
     // var product = db.find(id);
     //console.log(req.params.id);
     var product = db.find(req.params.id);
-    console.log(db.find(req.params.id))
+    // console.log(db.find(req.params.id))
     res.render('product', product);
 });
-
-router.delete('/:id', function(req, res){
-    var product = db.find(req.params.id);
-    db.remove(id);
-    res.redirect('/products');
-})
 
 router.post('/', function(req, res){
     var name = req.body.name;
@@ -27,5 +21,10 @@ router.post('/', function(req, res){
     db.add(name, rating);
     res.redirect('/products');
 });
+
+router.delete('/:id', function(req, res){
+    db.remove(req.params.id);
+    res.redirect('/products');
+})
 
 module.exports = router;
